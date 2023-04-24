@@ -3,7 +3,8 @@ let wrongGuesses = 0;
 
 function startGame() {
     console.log("Start game button clicked"); // Add this line
-    fetch("/api/start")
+    //fetch("/api/start")
+    fetch("/.netlify/functions/start")
       .then((response) => response.json())
       .then((data) => {
         currentPrompt = data;
@@ -72,7 +73,8 @@ function startGame() {
     document.getElementById('results').style.display = 'block';
     document.getElementById('score').innerText = `Your final score: ${score}`;
   
-    const response = await fetch('/api/get-all-answers');
+    //const response = await fetch('/api/get-all-answers');
+    const response = await fetch('/.netlify/functions/getAllAnswers');
     const data = await response.json();
   
     data.allAnswers.forEach((answer, index) => {
@@ -88,7 +90,8 @@ function startGame() {
     const answer = answerInput.value.trim();
     if (answer === '') return;
   
-    const response = await fetch('/api/submit-answer', {
+    //const response = await fetch('/api/submit-answer', {
+    const response = await fetch('/.netlify/functions/submitAnswer', {    
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
