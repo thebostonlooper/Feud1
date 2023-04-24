@@ -1,0 +1,11 @@
+[
+    {
+      "question": "Name a fruit that's red.",
+      "answers": ["apple", "strawberry", "raspberry", "cherry"]
+    },
+    {
+      "question": "Name a type of transportation.",
+      "answers": ["car", "train", "bus", "bicycle", "airplane"]
+    }
+  ]
+  
