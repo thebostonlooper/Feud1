@@ -40,7 +40,8 @@ const calculateScore = (userAnswer, correctAnswers) => {
   return isCorrect ? 1 : 0;
 };
 
-app.get('/api/start', async (req, res) => {
+//app.get('/api/start', async (req, res) => {
+app.get('/.netlify/functions/start', async (req, res) => {
   const question = getQuestion();
   req.session.score = 0;
   req.session.wrongGuesses = 0;
@@ -48,7 +49,8 @@ app.get('/api/start', async (req, res) => {
   res.json({ question: question.question, answers: question.answers.length });
 });
 
-app.post('/api/submit-answer', async (req, res) => {
+//app.post('/api/submit-answer', async (req, res) => {
+app.post('/.netlify/functions/submitAnswer', async (req, res) => {
     const userAnswer = req.body.answer;
     const isCorrect = req.session.correctAnswers.some(
       (answer, index) => {
@@ -76,12 +78,14 @@ app.post('/api/submit-answer', async (req, res) => {
     });
   });  
 
-app.get('/api/next-prompt', async (req, res) => {
+//app.get('/api/next-prompt', async (req, res) => {
+app.get('/.netlify/functions/nextPrompt', async (req, res) => {
   const question = getQuestion();
   res.json({ prompt: question.question });
 });
 
-app.get("/api/get-all-answers", async (req, res) => {
+//app.get("/api/get-all-answers", async (req, res) => {
+app.get("/.netlify/functions/getAllAnswers", async (req, res) => {
     res.json({ allAnswers: req.session.correctAnswers });
   });  
 
