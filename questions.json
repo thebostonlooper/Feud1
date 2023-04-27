@@ -1,5 +1,16 @@
 [
-    
+    {
+      "question": "Name something that adults might hate to share",
+      "answers": ["money", "food", "bed", "bathroom", "car"]
+    },
+    {
+      "question": "Name something you might lose as you get older",
+      "answers": ["memory", "hair", "teeth", "sight", "hearing"]
+    },
+    {
+      "question": "Where was the last place you had a bit too much to drink",
+      "answers": ["bar", "home", "party", "wedding", "college"]
+    },
     {
       "question": "Name something that adults might hate to share",
       "answers": ["money", "food", "bed", "bathroom", "car"]
